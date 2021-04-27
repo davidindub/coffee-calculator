@@ -74,8 +74,9 @@ class Brew:
 
     def calc(self):
         self.water = self.ground_coffee * self.ratio
+        self.brewed_coffee = self.water - (self.ground_coffee * 2)
         # print(f"Use {self.water}g water to brew. You will have xx amount of brewed coffee")
-        print(f"\n \n \n YOUR RECIPE \n ----------- \n Ground Coffee: {self.ground_coffee}g \n Brewing Water: {self.water}g \n Brewed Coffee: XXXX \n Ratio: 1:{self.ratio} \n \n")
+        print(f"\n \n \n YOUR RECIPE \n ----------- \n Ground Coffee: {self.ground_coffee}g \n Brewing Water: {self.water}g \n Brewed Coffee: {self.brewed_coffee}g \n Ratio: 1:{self.ratio} \n \n")
         print(art_enjoy)
 
 print(art_greeting)
