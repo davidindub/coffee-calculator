@@ -1,5 +1,7 @@
-version_no = 0.2
+def print_art_greeting(version_no):
+  print(art_greeting.format(version_no))
 
+  
 art_greeting = """
 
     __   ___   _____  _____  ___    ___                               
@@ -20,7 +22,8 @@ art_greeting = """
 
                                                             Version {}                                                                      
 
-""".format(version_no)
+"""
+
 
 art_enjoy = """
     ( (
