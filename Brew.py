@@ -1,10 +1,10 @@
 from ascii_art import art_enjoy
 
 class Brew:
-    def __init__(self):
-        self.ratio = 0
+    def __init__(self, ratio=0, water=0, ground_coffee=0, brewed_coffee=0):
+        self.ratio = ratio
         self.water = 0
-        self.ground_coffee = 0
+        self.ground_coffee = ground_coffee
         self.brewed_coffee = 0
         self._ratio_dict = {
           "A": 15,
@@ -25,7 +25,7 @@ class Brew:
                 continue
               else:
                 break
-            self.ratio = self._ratio_dict[ratio_answer.upper()]
+            self.set_ratio(ratio_answer)
 
         if query == "ground_coffee":
           while not self.ground_coffee:
@@ -36,10 +36,15 @@ class Brew:
               continue
             else:
               break
+    
+    def set_ratio(self, ratio_answer):
+      self.ratio = self._ratio_dict[ratio_answer.upper()]
 
     def calc(self):
         self.water = self.ground_coffee * self.ratio
         self.brewed_coffee = self.water - (self.ground_coffee * 2)
 
+    
+    def print_recipe(self):
         print(f"\n \n \n YOUR RECIPE \n ----------- \n Ground Coffee: {self.ground_coffee}g \n Brewing Water: {self.water}g \n Brewed Coffee: {self.brewed_coffee}g \n Ratio: 1:{self.ratio} \n \n")
         print(art_enjoy)

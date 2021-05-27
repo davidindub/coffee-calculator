@@ -13,3 +13,4 @@ todays_brew.ask("ground_coffee")
 
 
 todays_brew.calc()
+todays_brew.print_recipe()
